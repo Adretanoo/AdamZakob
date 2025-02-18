@@ -179,11 +179,11 @@ button {
 
 /* menu end*/
 
-/* top start */
-.top{
+.top,.services, .portfolio{
     padding-bottom: 100px;
 }
 
+/* top start */
 .top__inner {
     display: flex;
     justify-content: space-between;
@@ -253,26 +253,26 @@ button {
 }
 
 
+
+
 /* top end */
 
 /* services start */
-.services {
-    padding-bottom: 100px;
-}
-.services__title-item p {
+.services__title-item p, .portfolio__title-item p {
     color:var(--tile-btn-color);
     font-size: 18px;
     font-weight: 400;
 }
-.services__title-item div {
+.services__title-item div, .portfolio__title-item div {
     background-color: var(--tile-btn-color);
     width: 50px;
     height: 2px;
     margin: 10px 0 15px;
 }
-.services__title-text{
+.services__title-text, .portfolio__title-text{
     font-size: 36px;
     font-weight: 700;
+    line-height: 40px;
 }
 .services__menu{
     margin-top: 50px;
@@ -300,10 +300,97 @@ button {
 }
 /* services end */
 
+/* preloader start*/
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #8643DC, #4E148C, #2D0D5A, #8643DC);
+    background-size: 300% 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: bgMove 5s ease-in-out infinite alternate;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.preloader-text {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    filter: blur(10px);
+    animation: fadeInText 3s ease-out forwards;
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; filter: blur(10px); }
+    50% { opacity: 0.5; filter: blur(5px); }
+    100% { opacity: 1; filter: blur(0); }
+}
+
+.cursor {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+/* preloader end*/
 
 
+/* portfolio start*/
+.portfolio {
+    position: relative;
+    overflow: hidden;
+}
 
+.portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-90deg, rgba(187, 133, 255, 14%) 0%, rgba(255, 177, 222, 14%) 100%);
+    filter: blur(860px); /* Змініть значення для регулювання розмиття */
+    z-index: -1; /* Задати зворотний порядок, щоб елемент залишався поверх */
+}
 
+.portfolio__title-href {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.portfolio__title-href a{
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.portfolio__title-text{
+    display: flex;
+    justify-content: space-between;
+}
+.portfolio__block{
+    display: flex;
+    justify-content: space-between;
+}
+/* portfolio end*/
 
 /* media start */
 @media (max-width:1330px){
