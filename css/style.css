@@ -46,6 +46,8 @@ button {
 
 :root {
     --text-color: #25202F;
+    --tile-btn-color: #8643DC;
+    --services-text-color:#25202F;
 
 }
 
@@ -178,6 +180,10 @@ button {
 /* menu end*/
 
 /* top start */
+.top{
+    padding-bottom: 100px;
+}
+
 .top__inner {
     display: flex;
     justify-content: space-between;
@@ -208,7 +214,7 @@ button {
 .top__info button {
     padding: 14px 59px;
     border-radius: 100px;
-    background-color: #8643DC;
+    background-color: var(--tile-btn-color);
     color: #FFFFFF;
     margin-top: 50px;
     font-size: 24px;
@@ -249,7 +255,50 @@ button {
 
 /* top end */
 
+/* services start */
+.services {
+    padding-bottom: 100px;
+}
+.services__title-item p {
+    color:var(--tile-btn-color);
+    font-size: 18px;
+    font-weight: 400;
+}
+.services__title-item div {
+    background-color: var(--tile-btn-color);
+    width: 50px;
+    height: 2px;
+    margin: 10px 0 15px;
+}
+.services__title-text{
+    font-size: 36px;
+    font-weight: 700;
+}
+.services__menu{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
 
+}
+.services__item-title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.services__item-title p {
+    color:var(--services-text-color);
+    font-size: 24px;
+    font-weight: 500;
+}
+.services__menu-item p {
+    color:#47444E;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 21px;
+    line-height: 30px;
+    max-width: 350px;
+}
+/* services end */
 
 
 
