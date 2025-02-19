@@ -412,19 +412,18 @@ button {
     /* Задати зворотний порядок, щоб елемент залишався поверх */
 }
 
-.portfolio__title-href {
+.portfolio__title-href,.contacts__title-text a {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.portfolio__title-href a {
+.portfolio__title-href a,.contacts__title-text a {
     font-size: 24px;
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
-
 .portfolio__title-text {
     display: flex;
     justify-content: space-between;
@@ -499,17 +498,16 @@ button {
 }
 
 
-.portfolio__title-href a {
+.portfolio__title-href a,.contacts__title-text a {
     position: relative;
     display: inline-block;
     font-weight: bold;
     color: #333;
-    text-decoration: none;
     overflow: hidden;
     transition: color 0.3s ease-in-out;
 }
 
-.portfolio__title-href a::after {
+.portfolio__title-href a::after,.contacts__title-text a::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -521,15 +519,15 @@ button {
     transition: transform 0.3s ease-in-out;
 }
 
-.portfolio__title-href a:hover {
+.portfolio__title-href a:hover,.contacts__title-text a:hover {
     color: var(--tile-btn-color);
 }
 
-.portfolio__title-href a:hover::after {
+.portfolio__title-href a:hover::after,.contacts__title-text a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-.portfolio__title-href a:active {
+.portfolio__title-href a:active,.contacts__title-text a:active {
     transform: scale(0.95);
     color: #c70039;
 }
@@ -648,7 +646,6 @@ button {
 .contacts__title-text  a {
     font-size: 24px;
     font-weight: 400;
-    color: var(--tile-btn-color);
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -705,6 +702,8 @@ button {
 .contact__form-input::placeholder,.contact__form-textarea::placeholder {
     color: var(--contacts-color);
 }
+
+
 /*contacts end*/
 
 
