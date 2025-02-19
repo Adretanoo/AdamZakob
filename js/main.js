@@ -23,6 +23,20 @@ window.addEventListener("load", function () {
 });
 
 
+
+document.getElementById('files').addEventListener('change', function() {
+  const fileList = document.getElementById('file-list');
+  fileList.innerHTML = ''; // Очищаємо попередній список файлів
+
+  for (let file of this.files) {
+      const listItem = document.createElement('li');
+      listItem.textContent = file.name;
+      fileList.appendChild(listItem);
+  }
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const scrollLinks = document.querySelectorAll('[data-scroll]');
 
