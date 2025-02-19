@@ -356,7 +356,6 @@ button {
 /* portfolio start*/
 .portfolio {
     position: relative;
-    overflow: hidden;
 }
 
 .portfolio::before {
@@ -389,7 +388,99 @@ button {
 .portfolio__block{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    cursor:pointer;
+    margin-top: 20px;
 }
+.portfolio__block img {
+    max-width: 540px;
+    height: auto;
+    width: 100%;
+}
+.portfolio__href {
+    display: none;
+}
+
+.portfolio__block {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.portfolio__block img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.portfolio__block img:hover {
+    transform: rotate(3deg) scale(1.08);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+}
+
+
+.portfolio__block img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.portfolio__block img {
+    transition: transform 0.4s ease, box-shadow 1.5s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(134, 67, 220, 0.5);
+    border-radius: 10px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    animation: shadowAnimation 3s infinite alternate ease-in-out;
+}
+
+@keyframes shadowAnimation {
+    0% { box-shadow: 0px 4px 15px rgba(134, 67, 220, 0.5); }
+    100% { box-shadow: 0px 8px 25px rgba(255, 64, 129, 0.6); }
+}
+
+.portfolio__block img:hover {
+    box-shadow: 0px 12px 30px rgba(255, 64, 129, 0.7);
+    opacity: 1;
+}
+
+
+.portfolio__title-href a {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+}
+
+.portfolio__title-href a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio__title-href a:hover {
+    color: var(--tile-btn-color);
+}
+
+.portfolio__title-href a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.portfolio__title-href a:active {
+    transform: scale(0.95);
+    color: #c70039;
+}
+
 /* portfolio end*/
 
 /* media start */
@@ -407,6 +498,13 @@ button {
         width: 50px;
     }
     /* services end */
+    .portfolio__block{
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    .portfolio__block img{
+        max-width: 445px;
+    }
 
 }
 @media (max-width:1100px) {
@@ -443,6 +541,9 @@ button {
         width: 50px;
     }
     /* services end */
+    .portfolio__block img{
+        max-width: 395px;
+    }
 
 }
 
@@ -488,6 +589,17 @@ button {
         width: 45px;
     }
     /* services end */
+
+    .portfolio__block img{
+        max-width: 325px;
+    }
+    .portfolio__title-href a {
+        font-size: 20px;
+    }
+    .portfolio__block {
+        margin-top: 35px;
+    }
+    
 }
 
 @media (max-width:860px) {
@@ -553,10 +665,18 @@ button {
     .services__item-title{
         gap: 10px;
     }
-    .services__title-text{
+    .services__title-text,.portfolio__title-text{
         font-size: 30px;
     }
     /* services end */
+    /* portfolio start */
+    .portfolio__block img{
+        max-width: 280px;
+    }
+    .portfolio__title-href a {
+        font-size: 18px;
+    }
+    /* portfolio end */
 }
 
 @media (max-width:768px) {
@@ -623,6 +743,11 @@ button {
         max-width: 150px;
     }
     /* services end */
+    /* portfolio start */
+    .portfolio__block img{
+        max-width: 235px;
+    }
+    /* portfolio end */
 }
 
 @media (max-width:674px) {
@@ -701,6 +826,17 @@ button {
         max-width: 350px;
     }
     /* services end */
+    .portfolio__block{
+        max-width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .portfolio__block img{
+        max-width: 450px;
+    }
+
+
 }
 @media (max-width:480px){
     /* top start */
@@ -737,6 +873,21 @@ button {
     .header__img img {
         height: auto;
         width: 550px;
+    }
+
+    .portfolio__title-href a {
+        font-size: 16px;
+    }
+    .portfolio__title-text {
+        flex-wrap: wrap;
+    }
+    .portfolio__href-none {
+        display: none;
+    }
+    .portfolio__href {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
     }
 }
 /* media end */
