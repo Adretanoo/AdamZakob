@@ -7,7 +7,9 @@ html {
 ::before {
     box-sizing: inherit;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 html,
 body {
     height: 100%;
@@ -179,6 +181,7 @@ button {
 .menu__overlay-item a:hover {
     color: #7E7F86;
 }
+
 
 /* menu end*/
 
