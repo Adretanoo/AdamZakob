@@ -202,6 +202,10 @@ button {
     padding-top: 125px;
 }
 
+.top__info a {
+    display: inline-block;
+    font-weight: 400;
+}
 .top__info span {
     color: #666666;
     font-size: 24px;
@@ -220,10 +224,11 @@ button {
 }
 
 .button__style {
-    padding: 14px 59px;
+    padding: 18px 59px;
     border-radius: 100px;
     background-color: var(--tile-btn-color);
     color: #FFFFFF;
+    text-align: center;
     margin-top: 50px;
     font-size: 24px;
     font-weight: 500;
@@ -265,6 +270,30 @@ button {
 
 /* top end */
 
+
+.all__div-line {
+    background-color: var(--tile-btn-color);
+    width: 50px;
+    height: 2px;
+    margin: 3px 0 15px;
+    position: relative;
+    
+    /* Анімація руху */
+    animation: moveLine 2s infinite alternate ease-in-out;
+}
+
+@keyframes moveLine {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px); /* Налаштуйте відстань руху */
+    }
+}
+
+
+
+
 /* services start */
 .services__title-item p,
 .portfolio__title-item p,
@@ -275,15 +304,7 @@ button {
     font-weight: 400;
 }
 
-.services__title-item div,
-.portfolio__title-item div,
-.clients__title-item div,
-.contacts__title-item div {
-    background-color: var(--tile-btn-color);
-    width: 50px;
-    height: 2px;
-    margin: 10px 0 15px;
-}
+
 
 .services__title-text,
 .portfolio__title-text,
@@ -727,6 +748,13 @@ button {
     gap: 40px;
     margin-top: 40px;
     margin-bottom: 50px;
+}
+.social__block-item img {
+    transition: transform 0.3s ease-in-out; /* Плавний перехід */
+}
+
+.social__block-item img:hover {
+    transform: scale(1.2); /* Збільшення на 20% */
 }
 /*footer end*/
 
