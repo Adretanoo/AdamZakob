@@ -1,0 +1,74 @@
+.container__portfolio {
+    margin-top: 75px;
+}
+.portfolio__block-href img {
+    rotate: 180deg;
+}
+.portfolio__block-href a {
+    padding-bottom: 5px;
+}
+.portfolio__block-card {
+    margin-top: 50px;
+    margin-bottom: 110px;
+}
+.portfolio__card { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Дві колонки */
+    gap: 30px; 
+    padding: 0;
+    list-style: none;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.protfolio__card-item {
+    display: flex;
+    justify-content: center; /* Вирівнювання по центру */
+    align-items: center;
+    padding: 30px 30px;
+    cursor: pointer;
+    overflow: hidden;
+
+    /* Додаємо тінь */
+    box-shadow: 0px 20px 20px rgba(134, 67, 220, 0.3); /* Тінь кольору #8643DC */
+    border-radius: 10px; /* Округлені краї */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.protfolio__card-item img {
+    border-radius: 10px;
+}
+.protfolio__card-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Плавний ефект */
+}
+
+/* Анімація при наведенні */
+.protfolio__card-item:hover {
+    transform: scale(1); /* Легке збільшення */
+    box-shadow: 0px 15px 30px rgba(134, 67, 220, 0.5); /* Сильніша тінь */
+}
+
+.protfolio__card-item:hover img {
+    transform: scale(1.03); /* Збільшення зображення на 10% */
+}
+
+/* Анімація при натисканні */
+.protfolio__card-item:active {
+    transform: scale(0.98); /* Легке зменшення */
+    box-shadow: 0px 5px 10px rgba(134, 67, 220, 0.2); /* Зменшена тінь */
+}
+
+.protfolio__card-item:active img {
+    transform: scale(0.95); /* Легке зменшення зображення */
+}
+
+
+
+
+@media(max-width:567px) {
+    .portfolio__card {  
+        grid-template-columns: 1fr; 
+    }
+}
