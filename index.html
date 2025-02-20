@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <!-- <div id="preloader">
+    <div id="preloader">
         <h2 class="preloader-text"><span class="text"></span><span class="cursor">|</span></h2>
-    </div>        -->
+    </div>       
     <header id="about" class="header">
         <div class="header__img"><img src="/images/header_elipse.png" alt="elipse"></div>
         <div class="container">
@@ -200,7 +200,8 @@
                         <a href="mailto:adamzakob@gmail.com" >adamzakob@gmail.com</a>
                     </div>
                     <div class="contacts__form">
-                        <form>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="11e49ff4-538b-4cf1-9d3d-0324f06b735c">
                             <div>
                                 <input class="contact__form-input" type="text" id="name" name="name"
                                     placeholder="What’s your name?" required>
@@ -253,6 +254,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 

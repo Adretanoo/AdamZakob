@@ -96,3 +96,18 @@ menuLinks.forEach(link => {
     document.body.classList.remove('no-scroll'); // Знімаємо блокування
   });
 });
+
+document.getElementById('files').addEventListener('change', function() {
+  const fileList = document.getElementById('file-list');
+  fileList.innerHTML = ''; // Очищаємо попередній список файлів
+
+  for (let file of this.files) {
+      const listItem = document.createElement('li');
+      listItem.textContent = file.name;
+      fileList.appendChild(listItem);
+  }
+});
+document.getElementById('ajax-contact-form').addEventListener('submit', function() {
+  setTimeout(() => this.reset(), 500); // Очищає форму після відправки
+});
+
